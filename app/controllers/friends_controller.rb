@@ -4,8 +4,8 @@ class FriendsController < ProtectedController
 
   # GET /friends
   def index
-    # @friends = current_user.friends.all
-    @friends = Friend.all
+    @friends = current_user.friends.all
+    # @friends = Friend.all
 
     render json: @friends
   end
@@ -44,12 +44,12 @@ class FriendsController < ProtectedController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_friend
-      # @friend = current_user.friends.find(params[:id])
-      @friend = Friend.find(params[:id])
+      @friend = current_user.friends.find(params[:id])
+      # @friend = Friend.find(params[:id])
     end
 
     # Only allow a trusted parameter "white list" through.
     def friend_params
-      params.require(:friend).permit(:first_name, :last_name, :dob)
+      params.require(:friend).permit(:first_name, :last_name, :dob, :user_id)
     end
 end

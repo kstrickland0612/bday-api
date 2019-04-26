@@ -4,8 +4,8 @@ class EventsController < ProtectedController
 
   # GET /events
   def index
-    # @events = current_user.events.all
-    @events = Event.all
+    @events = current_user.events.all
+    # @events = Event.all
 
     render json: @events
   end
@@ -44,8 +44,8 @@ class EventsController < ProtectedController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_event
-      # @event = current_user.events.find(params[:id])
-      @event = Event.find(params[:id])
+      @event = current_user.events.find(params[:id])
+      # @event = Event.find(params[:id])
     end
 
     # Only allow a trusted parameter "white list" through.
