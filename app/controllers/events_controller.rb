@@ -1,10 +1,10 @@
-class EventsController < ApplicationController
+class EventsController < ProtectedController
   # switch to ProtectedController after testing
   before_action :set_event, only: [:show, :update, :destroy]
 
   # GET /events
   def index
-    # @events = current_user.events.all (switch back to this after testing)
+    # @events = current_user.events.all
     @events = Event.all
 
     render json: @events
@@ -17,11 +17,11 @@ class EventsController < ApplicationController
 
   # POST /events
   def create
-    # @event = current_user.events.build(event_params) (switch back to this after testing)
-    @event = Event.new(event_params)
+    @event = current_user.events.build(event_params)
+    # @event = Event.new(event_params)
 
     if @event.save
-      render json: @event, status: :created, location: @event
+      render json: @event, status: :created, location: @friend
     else
       render json: @event.errors, status: :unprocessable_entity
     end
@@ -44,12 +44,12 @@ class EventsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_event
-      # @event = current_user.events.find(params[:id]) (switch back to this after testing)
+      # @event = current_user.events.find(params[:id])
       @event = Event.find(params[:id])
     end
 
     # Only allow a trusted parameter "white list" through.
     def event_params
-      params.require(:event).permit(:title, :category, :date, :action, :friend_id)
+      params.require(:event).permit(:title, :category, :date, :action, :friend_id, :user_id)
     end
 end
