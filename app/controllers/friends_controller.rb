@@ -1,11 +1,11 @@
-class FriendsController < ApplicationController
+class FriendsController < ProtectedController
   # switch to ProtectedController after testing
   before_action :set_friend, only: [:show, :update, :destroy]
 
   # GET /friends
   def index
-    # @friends = current_user.friends.all (switch back to this after testing)
-    @friends = Friend.all
+    @friends = current_user.friends.all
+    # @friends = Friend.all
 
     render json: @friends
   end
@@ -17,8 +17,8 @@ class FriendsController < ApplicationController
 
   # POST /friends
   def create
-    # @friend = current_user.friends.build(friend_params) (switch back to this after testing)
-    @friend = Friend.new(friend_params)
+    @friend = current_user.friends.build(friend_params)
+    # @friend = Friend.new(friend_params)
 
     if @friend.save
       render json: @friend, status: :created, location: @friend
@@ -44,8 +44,8 @@ class FriendsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_friend
-      # @friend = current_user.friends.find(params[:id]) (switch back to this after testing)
-      @friend = Friend.find(params[:id])
+      @friend = current_user.friends.find(params[:id])
+      # @friend = Friend.find(params[:id])
     end
 
     # Only allow a trusted parameter "white list" through.
