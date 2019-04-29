@@ -7,7 +7,6 @@ curl "http://localhost:4741/events" \
   --header "Authorization: Token token=${TOKEN}" \
   --data '{
     "event": {
-      "title": "'"${TITLE}"'",
       "category": "'"${CAT}"'",
       "date": "'"${DATE}"'",
       "action": "'"${ACTION}"'",
