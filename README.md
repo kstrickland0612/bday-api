@@ -14,7 +14,7 @@ I found that I actually needed a one to many relationships of users to friends a
 
 My V1 ERD:
 
-![V1 ERD](.public/ERD-V1.png "v1 ERD")
+![V1 ERD](./public/ERD-V1.png "v1 ERD")
 
 My final version ERD (notice all the bonus features from v1 are incorporated now):
 
