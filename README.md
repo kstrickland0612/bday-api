@@ -21,7 +21,10 @@ My final version ERD (notice all the bonus features from v1 are incorporated now
 ![ERD](./public/ERD.png "final ERD")
 
 ## Wanna try it?
-[You can use Evento here!](https://kstrickland0612.github.io/evento-client/)
-[The deployed Heroku database lives here](https://sheltered-cliffs-69470.herokuapp.com/)
-[Take a look at my back-end repo here](https://github.com/kstrickland0612/evento-api)
-[Take a look at my front-end repo here](https://github.com/kstrickland0612/evento-client)
+### [You can use Evento here!](https://kstrickland0612.github.io/evento-client/)
+
+### [The deployed Heroku database lives here](https://sheltered-cliffs-69470.herokuapp.com/)
+
+### [Take a look at my back-end repo here](https://github.com/kstrickland0612/evento-api)
+
+### [Take a look at my front-end repo here](https://github.com/kstrickland0612/evento-client)
