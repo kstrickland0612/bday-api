@@ -10,7 +10,8 @@ curl "http://localhost:4741/events/${ID}" \
       "category": "'"${CAT}"'",
       "date": "'"${DATE}"'",
       "action": "'"${ACTION}"'",
-      "friend_id": "'"${FRIEND_ID}"'"
+      "friend_id": "'"${FRIEND_ID}"'",
+      "is_annual": "'"${ANNUAL}"'"
     }
   }'
 
